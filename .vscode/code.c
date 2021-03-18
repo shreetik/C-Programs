@@ -1,36 +1,101 @@
-#include <stdio.h> 
+#include<stdio.h>
+struct library{
+    int acc_no;
+    char author_name[30];
+    char book_title[30];
+    int flag;
+}li1,li2,li3;
+
+
+
 
 int main(){
-int i,j,arr[3][3],arr1[3][3],arr2[3][3];
+int c=0,x;
+char auth[20],a1[20],a2[20];
 
-for(i=0;i<3;i++){
-  for(j=0;j<3;j++){
-    printf("Enter a number :: ");
-    scanf("%d",&arr[i][j]);
-  }
+printf("Input book information\n");
+printf("----------------------\n");
+
+printf("Enter book title :: ");
+gets(li1.book_title);
+
+printf("Enter name of author :: ");
+gets(li1.author_name);
+
+printf("enter accession number :: ");
+scanf("%d",&li1.acc_no);
+
+printf("enter book issued or not by 1 or 0 :: ");
+scanf("%d",&li1.flag);
+
+printf("Do you want to insert another book information : for yes input '1' and for no input '0' :: ");
+scanf("%d",&x);
+if(x == 1){
+  c++;
+printf("\nInput book information\n");
+printf("----------------------\n\n");
+
+printf("Enter book title :: ");
+scanf("%s",li2.book_title);
+
+printf("Enter name of author :: ");
+scanf("%s",li2.author_name);
+
+printf("enter accession number :: ");
+scanf("%d",&li2.acc_no);
+
+printf("enter book issued or not by 1 or 0 :: ");
+scanf("%d",&li2.flag);
+
 }
 
-for(i=0;i<3;i++){
-  for(j=0;j<3;j++){
-    printf("Enter for 2nd matrix :: ");
-    scanf("%d",&arr1[i][j]);
-  }
+printf("---------------------------------------------------------------\n\n");
+
+
+printf("book information\n");
+printf("----------------------\n\n");
+
+printf("Book title :: %s \n",li1.book_title);
+printf("Author name :: %s \n",li1.author_name);
+printf("Accession number :: %d \n",li1.acc_no);
+
+if(li1.flag == 1){
+  printf("Book is not issued");
+}
+else{
+  printf("Book is issued");
 }
 
-for(i=0;i<3;i++){
-  for(j=0;j<3;j++){
-    arr2[i][j] = arr[i][j] - arr1[i][j];
-  }
+if(c == 1){
+  printf("\n\nSecond book information\n");
+printf("----------------------\n\n");
+
+printf("Book title :: %s \n",li2.book_title);
+printf("Author name :: %s \n",li2.author_name);
+printf("Accession number :: %d \n",li2.acc_no);
+
+if(li2.flag == 1){
+  printf("Book is not issued");
+}
+else{
+  printf("Book is issued");
+}
 }
 
-for(i=0;i<3;i++){
-  for(j=0;j<3;j++){
-   printf("%d ",arr2[i][j]);
-  }
-  printf("\n");
+printf("\nSearch books by author's name\n");
+printf("------------------------------------\n");
+
+printf("Enter author name :: ");
+scanf("%s",auth);
+
+if(li1.author_name == auth ){
+  printf("Book title :: %s \n",li1.book_title);
 }
-
-
-
-return 0;
+else if(auth == li2.author_name){
+  printf("Book title :: %s \n",li2.book_title);
+}
+else{
+  printf("Here is no books belongs to this author\n");
+}
+    return 0;
 }

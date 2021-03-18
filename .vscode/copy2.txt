@@ -1,0 +1,1 @@
+hello world this string is copy to another file
